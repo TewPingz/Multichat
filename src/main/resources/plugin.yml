@@ -1,0 +1,6 @@
+name: MultiChat
+version: '${project.version}'
+main: me.tewpingz.multichat.MultiChatPlugin
+api-version: 1.19
+authors: [ TewPingz ]
+website: https://www.tewpingz.me

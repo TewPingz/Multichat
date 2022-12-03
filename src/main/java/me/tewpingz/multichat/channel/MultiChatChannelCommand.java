@@ -35,6 +35,10 @@ public class MultiChatChannelCommand extends BaseCommand {
     @Syntax("<channelName>")
     @CommandCompletion("@channels")
     public void delete(CommandSender sender, MultiChatChannel channel) {
+        if (channel.getChannelName().equalsIgnoreCase("global")) {
+            sender.sendMessage(ChatColor.RED + "You cannot delete global channel");
+            return;
+        }
         MultiChatPlugin.getInstance().getChannelManager().deleteChannel(channel.getChannelName());
         sender.sendMessage(ChatColor.GREEN + "You have removed the channel named %s".formatted(channel.getChannelName()));
     }
